@@ -37,7 +37,8 @@ class BFragment1 : Fragment() {
         // Inflate the layout for this fragment
         val view =inflater.inflate(R.layout.fragment_b1, container, false)
         val mainText = view.findViewById<TextView>(R.id.mainText)
-        mainText.text = "TEST what this"
+        mainText!!.text = arguments?.getInt("openWithId").toString()
+        //"TEST what this"
         return view
     }
 
@@ -52,12 +53,12 @@ class BFragment1 : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BFragment1().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(id: Int) : BFragment1 {
+            val args = Bundle()
+            args.putInt("openWithId", id)
+            val fragment = BFragment1()
+            fragment.arguments = args
+            return fragment
+        }
     }
 }

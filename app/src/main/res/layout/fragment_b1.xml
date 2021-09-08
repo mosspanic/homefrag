@@ -11,6 +11,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="первый бланк фрагмента" />
+        android:text="первый бланк фрагмента"
+        android:textSize="34sp" />
 
 </FrameLayout>
