@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BFragment1">
+    tools:context=".BFragment2">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/mainText"
+        android:id="@+id/mainText2"
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="первый бланк фрагмента" />
+        android:text="второй бланк фрагмента" />
 
 </FrameLayout>

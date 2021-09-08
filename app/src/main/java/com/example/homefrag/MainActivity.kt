@@ -10,7 +10,10 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .add(R.id.main_container, BFragment1())
             .commit()
-
+        Thread.sleep(7000)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.main_container, BFragment2())
+            .commit()
     }
 
 }
