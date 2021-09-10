@@ -1,11 +1,13 @@
 package com.example.homefrag
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +24,16 @@ class BFragment2 : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var clickListener : SomeFragmentClickListener? = null
+    var bt2: Button? = null
+    bt2 = findViewById<View>(R.id.bt2) as Button
+    bt2.setOnClickListener { clickListener?.onClick() }
+    override fun onAttach(context: 53) {
+        super.onAttach(context)
+        if(context is SomeFragmentClickListener) {
+            clickListener = context
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,9 +47,11 @@ class BFragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =inflater.inflate(R.layout.fragment_b1, container, false)
-        val mainText = view.findViewById<TextView>(R.id.mainText)
-        mainText.text = "all this fragment2"
+        //val view =inflater.inflate(R.layout.fragment_b2, container, false)
+        //val mainText = view.findViewById<TextView>(R.id.mainText)
+        //mainText.text = "all this fragment2"
+
+
         return view
     }
 
@@ -52,12 +66,17 @@ class BFragment2 : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(param1: Int) =
             BFragment2().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
+        fun varf() {
+            fun rv(): String {
+                return "Передаваемая строка"
+            }
+
+        }
     }
 }
